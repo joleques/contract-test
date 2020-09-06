@@ -1,0 +1,50 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0-M2'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id "au.com.dius.pact" version "4.0.3"
+	id 'java'
+}
+
+group = 'com.contract.consumer'
+version = '0.0.1-SNAPSHOT'
+
+import java.net.URL
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'au.com.dius.pact'
+
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	
+      testImplementation("au.com.dius:pact-jvm-consumer-junit:4.0.3")
+      testImplementation("au.com.dius:pact-jvm-consumer-java8:4.0.3")
+}
+
+jar {
+    archiveBaseName = 'finacial'
+    archiveVersion =  '1.0.0'
+}
+
+test {
+    systemProperties['pact.rootDir'] = "$rootDir/Pacts/Finacial"
+} 
+
+pact {
+	    
+    publish {
+        pactDirectory = "$rootDir/Pacts/Finacial"
+        pactBrokerUrl = 'http://localhost'
+       // pactBrokerUsername = ''
+       // pactBrokerPassword = ''
+    }
+}

@@ -1,0 +1,7 @@
+version: 1.0.0
+
+
+server:
+  servlet:
+    contextPath: /
+  port: 8091

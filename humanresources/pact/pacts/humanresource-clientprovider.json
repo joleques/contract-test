@@ -1,0 +1,36 @@
+{
+  "consumer": {
+    "name": "HumanResource"
+  },
+  "provider": {
+    "name": "ClientProvider"
+  },
+  "interactions": [
+    {
+      "description": "a request for resources",
+      "providerState": "i have a list of resources",
+      "request": {
+        "method": "GET",
+        "path": "/client/2",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "name": "José Maria",
+          "cpf": "94168764089"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

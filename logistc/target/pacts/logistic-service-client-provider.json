@@ -1,0 +1,51 @@
+{
+  "provider": {
+    "name": "client-provider"
+  },
+  "consumer": {
+    "name": "logistic-service"
+  },
+  "interactions": [
+    {
+      "description": "Pact JVM example Pact interaction",
+      "request": {
+        "method": "GET",
+        "path": "/client/2"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset\u003dUTF-8"
+        },
+        "body": {
+          "name": "Hatsune Miku"
+        },
+        "matchingRules": {
+          "body": {
+            "$.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.3"
+    }
+  }
+}

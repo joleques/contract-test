@@ -1,0 +1,59 @@
+I, [2020-09-04T09:54:24.797105 #8330]  INFO -- : Registered expected interaction GET /client/2
+D, [2020-09-04T09:54:24.797723 #8330] DEBUG -- : {
+  "description": "a request for resources",
+  "providerState": "i have a list of resources",
+  "request": {
+    "method": "GET",
+    "path": "/client/2",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": "José Maria",
+      "cpf": "94168764089"
+    }
+  },
+  "metadata": null
+}
+I, [2020-09-04T09:54:24.830145 #8330]  INFO -- : Received request GET /client/2
+D, [2020-09-04T09:54:24.830401 #8330] DEBUG -- : {
+  "path": "/client/2",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json",
+    "Referer": "http://localhost/",
+    "User-Agent": "Mozilla/5.0 (linux) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/11.12.0",
+    "Accept-Language": "en",
+    "Origin": "http://localhost",
+    "Host": "127.0.0.1:32997",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2020-09-04T09:54:24.830807 #8330]  INFO -- : Found matching response for GET /client/2
+D, [2020-09-04T09:54:24.830938 #8330] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "name": "José Maria",
+    "cpf": "94168764089"
+  }
+}
+I, [2020-09-04T09:54:24.841714 #8330]  INFO -- : Verifying - interactions matched
+I, [2020-09-04T09:54:24.845119 #8330]  INFO -- : Cleared interactions
+I, [2020-09-04T09:54:24.850211 #8330]  INFO -- : Updating pact for ClientProvider at /home/joleques/Documentos/workspace/contract-test/humanresources/pact/pacts/humanresource-clientprovider.json
+I, [2020-09-04T09:54:24.850951 #8330]  INFO -- : *****************************************************************************
+I, [2020-09-04T09:54:24.851045 #8330]  INFO -- : Updating existing file ./home/joleques/Documentos/workspace/contract-test/humanresources/pact/pacts/humanresource-clientprovider.json as pactfile_write_mode is :update
+I, [2020-09-04T09:54:24.851089 #8330]  INFO -- : Only interactions defined in this test run will be updated.
+I, [2020-09-04T09:54:24.851128 #8330]  INFO -- : As interactions are identified by description and provider state, pleased note that if either of these have changed, the old interactions won't be removed from the pact file until the specs are next run with :pactfile_write_mode => :overwrite.
+I, [2020-09-04T09:54:24.851162 #8330]  INFO -- : *****************************************************************************

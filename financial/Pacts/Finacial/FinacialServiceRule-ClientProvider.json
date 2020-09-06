@@ -1,0 +1,60 @@
+{
+  "provider": {
+    "name": "ClientProvider"
+  },
+  "consumer": {
+    "name": "FinacialServiceRule"
+  },
+  "interactions": [
+    {
+      "description": "Pact JVM example Pact interaction",
+      "request": {
+        "method": "GET",
+        "path": "/client/2"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "name": "José Maria",
+          "cpf": "94168764089"
+        },
+        "matchingRules": {
+          "body": {
+            "$.name": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.cpf": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "4.0.3"
+    }
+  }
+}
