@@ -130,6 +130,8 @@ pact {
 ```
 * Projeto Node: Basta rodar na raiz do projeto
 ```
+npm install
+
 npm run test
 ```
 **Publicar os PACT**
